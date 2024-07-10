@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Routing\Controller;
 use App\Models\science_star_registrations;
 use App\Models\students;
 use App\Mail\VerificationCode;
@@ -166,34 +166,3 @@ class WwjController extends Controller
             return response()->json(['message' => '查看报名信息时发生错误', 'error' => $e->getMessage()], 500);
         }
     }
-//    public function certificateContent(Request $request)
-//    {
-//        $id = $request['student_id'];
-//
-//        // 查询该学生的科研之星报名信息
-//        $scienceStarRegistration = science_star_registrations::where('student_id', $id)
-//            ->where('student_id',$id)
-//            ->firstOrFail();
-//
-//        if ($request->isMethod('post')) {
-//            $request->validate([
-//                'certificate' => 'required|string'
-//            ]);
-//
-//            $scienceStarRegistration->certificate = $request->input('certificate');
-//            science_star_registrations::where('student_id', $id)
-//                ->where('student_id', $id)
-//                ->update(['certificate' => $request->input('certificate')]);
-//            $updatedRegistration = science_star_registrations::where('student_id', $id)
-//                ->get([
-//                    'certificate'
-//                ]);
-//            return json_success(['message' => '内容已保存','data'=>$updatedRegistration], 200);
-//        }
-//
-//        return json_fail(['data' => $scienceStarRegistration], 200);
-//    }
-
-
-
-}
