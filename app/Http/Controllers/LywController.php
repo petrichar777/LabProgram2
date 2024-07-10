@@ -1,15 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Http\Model\competition_star_registrations;
 use App\Http\Model\students;
 use Illuminate\Http\Request;
-
 use Illuminate\Routing\Controller;
 use Carbon\Carbon;
-
-// 用于处理时间
 class LywController extends Controller
 {
     public static function NewAdd(Request $request)
@@ -131,7 +127,5 @@ class LywController extends Controller
 
 
 }
-
-
 
 

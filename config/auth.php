@@ -47,32 +47,18 @@ return [
         'user' => [
             'driver' => 'jwt',
             'provider' => 'users',
-<<<<<<< HEAD
+
         ],
         'students' => [
             'driver' => 'jwt',
-            'provider' => 'students',
+            'provider' => 'studentss',
             'hash' => false,
         ],
         'administrators' => [
-=======
-
-        ],
-        'student' => [
-            'driver' => 'jwt',
-            'provider' => 'student',
-            'hash' => false,
-        ],
-        'administrator' => [
->>>>>>> f96da5e945cc34c0ee9f5ea316ca832f5d45270a
             'driver' => 'jwt',  // 使用 JWT 驱动
             'provider' => 'administrators',  // 指向新的老师提供者
             'hash' => false,
         ],
-<<<<<<< HEAD
-
-=======
->>>>>>> f96da5e945cc34c0ee9f5ea316ca832f5d45270a
     ],
 
     /*
@@ -99,17 +85,6 @@ return [
 //        ],
         'admins' => [
             'driver' => 'eloquent',
-<<<<<<< HEAD
-            'model' => App\Http\Model\Admins::class,
-        ],
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => App\Http\Model\Users::class, // 这应该是你的用户模型的类名
-        ],
-        'administratorss' => [
-            'driver' => 'eloquent',
-            'model' => App\Http\Model\WdwAdminRegisterModel::class,
-=======
             'model' => App\Models\Admins::class,
         ],
         'users' => [
@@ -118,19 +93,14 @@ return [
         ],
 
 
-        'administratorss' => [
+        'administrators' => [
             'driver' => 'eloquent',
-            'model' => App\Models\WdwAdminRegisterModel::class,
->>>>>>> f96da5e945cc34c0ee9f5ea316ca832f5d45270a
+            'model' => App\Models\administrators::class,
         ],
 
         'studentss' => [
             'driver' => 'eloquent',
-<<<<<<< HEAD
-            'model' => App\Http\Model\students::class,
-=======
-            'model' => App\Models\Student::class,
->>>>>>> f96da5e945cc34c0ee9f5ea316ca832f5d45270a
+            'model' => App\Models\students::class,
         ],
 
         // 'users' => [

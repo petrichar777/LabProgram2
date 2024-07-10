@@ -36,15 +36,9 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-<<<<<<< HEAD
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-=======
             'host' => env('MAIL_HOST','smtp.qq.com'),
             'port' => env('MAIL_PORT', 465),
             'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
->>>>>>> f96da5e945cc34c0ee9f5ea316ca832f5d45270a
             'username' => env('MAIL_USERNAME'),
             'password' => env('MAIL_PASSWORD'),
             'timeout' => null,
@@ -98,13 +92,8 @@ return [
     */
 
     'from' => [
-<<<<<<< HEAD
-        'address' => env('1179378262@qq.com', '1179378262@qq.com'),
-        'name' => env('${APP_NAME}', '${APP_NAME}'),
-=======
         'address' => env('MAIL_FROM_ADDRESS', '1650934903@qq.com'),
         'name' => env('MAIL_FROM_NAME', '奖项报名系统'),
->>>>>>> f96da5e945cc34c0ee9f5ea316ca832f5d45270a
     ],
 
     /*
