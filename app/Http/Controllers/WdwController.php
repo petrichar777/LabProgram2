@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
 use App\Models\competition_star_registrations;
 use App\Models\science_star_registrations;
 use App\Models\innovation_star_registrations;
@@ -384,3 +385,11 @@ class WdwController extends Controller
 
 
   }
+=======
+use Illuminate\Http\Request;
+
+class WdwController extends Controller
+{
+    //
+}
+>>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf

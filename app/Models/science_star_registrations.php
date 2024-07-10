@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+<<<<<<< HEAD
 use Illuminate\Foundation\Auth\User as Authenticatable;//引用Authenticatable类使得DemoModel具有用户认证功能
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
@@ -174,3 +175,31 @@ class science_star_registrations extends Authenticatable implements JWTSubject
 }
 
 
+=======
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class science_star_registrations extends Model
+{
+    use HasFactory;
+
+    // 定义表名
+    protected $table = 'science_star_registrations';
+
+    // 定义可以批量赋值的字段
+    protected $fillable = [
+        'id',
+        'student_id',
+        'grade',
+        'major',
+        'class',
+        'name',
+        'project_category',
+        'project_name',
+        'approval_time',
+        'status',
+        'certificate',
+        'rejection_reason'
+    ];
+}
+>>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
