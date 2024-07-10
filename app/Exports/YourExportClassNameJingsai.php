@@ -2,7 +2,11 @@
 
 namespace App\Exports;
 
+<<<<<<< HEAD
+use App\Http\Model\Competition;
+=======
 use App\Models\Competition;
+>>>>>>> f96da5e945cc34c0ee9f5ea316ca832f5d45270a
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
