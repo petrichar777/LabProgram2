@@ -8,20 +8,14 @@
         "php": "^7.3|^8.0",
         "ext-curl": "*",
         "aliyuncs/oss-sdk-php": "^2.6",
-<<<<<<< HEAD
-=======
         "barryvdh/laravel-cors": "^3.0",
->>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "maatwebsite/excel": "^3.1",
-<<<<<<< HEAD
-=======
         "phpoffice/phpspreadsheet": "^1.18",
->>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
         "tymon/jwt-auth": "^1.0@dev"
     },
     "require-dev": {

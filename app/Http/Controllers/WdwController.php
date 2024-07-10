@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
+
+use Illuminate\Routing\Controller;
 use App\Models\competition_star_registrations;
 use App\Models\science_star_registrations;
 use App\Models\innovation_star_registrations;
@@ -13,59 +14,6 @@ use Illuminate\Support\Facades\Mail;
 
 class WdwController extends Controller
 {
-    //邮件发送验证码接口
-//    public function sendVerificationEmail(Request $request)
-//    {
-//        // 假设从请求中获取用户的邮箱地址和验证码
-//        $userEmail = $request['email'];
-//        $verificationCode = rand(100000, 999999); // 生成六位随机验证
-//
-//
-//        // 发送验证邮件
-//        Mail::to($userEmail)->send(new VerificationMail($verificationCode));
-//
-//        $verificationCode = base64_encode($verificationCode);
-//        // 将验证码存储在会话中
-//        session(['verification_code' => $verificationCode]);
-//        return json_success('验证码发送成功',null,200);
-//    }
-
-    //学生注册接口
-//    public function WdwStudentRegister(Request $request){
-//        $user['account'] = $request['account'];
-//        $user['grade'] = $request['grade'];
-//        $user['major'] = $request['major'];
-//        $user['class'] = $request['class'];
-//        $user['name'] = $request['name'];
-//        $user['password'] = $request['password'];
-//        $user['confirm_password'] = $request['confirm_password'];
-//        $user['email'] = $request['email'];
-//        $account = $user['account'];
-//        $inputCode = $request->input('verification_code'); // 用户输入的验证码
-//        //验证验证码是否一致
-//        $sessionCode = session('verification_code');
-//        $sessionCode = base64_decode($sessionCode);
-//        if ($inputCode != $sessionCode) {
-//            return json_fail('注册失败，验证码不正确', null, 102);
-//        }
-//
-//        if( $user['password'] != $user['confirm_password']){
-//            return json_fail('注册失败，两次输入的密码不一致',$user,100);
-//        }
-//
-//        $count = students::WdwUserCheckNumber($account);
-//        if($count == 0){
-//            $data = students::WdwcreateUser($user);
-//            if(is_error($data) == true){
-//                return json_fail('注册失败,添加数据的时候有问题',$data,100);
-//            }else{
-//                return json_success('注册成功！',$data,200);
-//            }
-//        }else{
-//            return json_fail('注册失败，该用户信息已经被注册过了',null,100);
-//        }
-//    }
-
     //学生登录接口
     public function WdwStudentLogin(Request $request)
     {
@@ -385,11 +333,4 @@ class WdwController extends Controller
 
 
   }
-=======
-use Illuminate\Http\Request;
 
-class WdwController extends Controller
-{
-    //
-}
->>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf

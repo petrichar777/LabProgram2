@@ -1,15 +1,16 @@
 <?php
 
-<<<<<<< HEAD
+
+use App\Http\Controllers\YyhController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LywController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WdwController;
-=======
 use App\Http\Controllers\WwjController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
->>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,11 +21,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-<<<<<<< HEAD
-////邮件发送验证接口
-//Route::post('/send-verification-email', [WdwController::class, 'sendVerificationEmail']);
-////学生注册接口
-//Route::post('/user/register',[WdwController::class,'WdwStudentRegister']);
+);
 ////学生登录接口
 Route::post('/user/login',[WdwController::class,'WdwStudentLogin']);
 //学生删除竞赛之星报名接口
@@ -52,20 +49,15 @@ Route::post('/user/addCompetitionStar', [WdwController::class, 'apply_competitio
 Route::middleware('jwt.role:students')->prefix('students')->group(function (){
     Route::post('logout', [WdwController::class, 'logoutStudent']);//学生登出
 });
-=======
 
-
+Route::post('/user/addCompetitionStar',[App\Http\Controllers\LywController::class,'NewAdd']);
+Route::post('/admin/approveCompetitionStar',[App\Http\Controllers\LywController::class,'approval']);
+Route::post('/admin/competitionStar',[App\Http\Controllers\LywController::class,'getAllCompetitionStars']);
+Route::post('/user/viewCompetitionStar',[App\Http\Controllers\LywController::class,'competitionStar']);
     Route::post('user/register', [WwjController::class, 'Wwjregister']);
     Route::post('user/sendVerificationCode', [WwjController::class, 'sendVerificationCode'])->name('send.verification.code');
     Route::post('user/forgotPassword', [WwjController::class, 'forgotPassword']);
     Route::get('admin/export-competition-star', [WwjController::class, 'exportCompetitionStar']);
     Route::get('admin/export-innovation-star', [WwjController::class, 'exportInnovationStar']);
     Route::get('admin/export-science-star', [WwjController::class, 'exportScienceStar']);
-    Route::post('user/viewScienceStar', [WwjController::class, 'viewScienceStar']);
-//    Route::post('certificateContent', [WwjController::class, 'certificateContent']);
 
-
-
-
-
->>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf

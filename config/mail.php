@@ -36,11 +36,7 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-<<<<<<< HEAD
-            'host' => env('MAIL_HOST', 'smtp.qq.com'),
-=======
             'host' => env('MAIL_HOST','smtp.qq.com'),
->>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
             'port' => env('MAIL_PORT', 465),
             'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
             'username' => env('MAIL_USERNAME'),
@@ -96,13 +92,8 @@ return [
     */
 
     'from' => [
-<<<<<<< HEAD
-        'address' => env('MAIL_FROM_ADDRESS', '1241570058@qq.com'),
-        'name' => env('MAIL_FROM_NAME', '奖项报名官方'),
-=======
         'address' => env('MAIL_FROM_ADDRESS', '1650934903@qq.com'),
         'name' => env('MAIL_FROM_NAME', '奖项报名系统'),
->>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
     ],
 
     /*
