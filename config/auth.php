@@ -47,6 +47,17 @@ return [
         'user' => [
             'driver' => 'jwt',
             'provider' => 'users',
+<<<<<<< HEAD
+        ],
+        'students' => [
+            'driver' => 'jwt',
+            'provider' => 'studentss',
+            'hash' => false,
+        ],
+        'administrators' => [
+            'driver' => 'jwt',  // 使用 JWT 驱动
+            'provider' => 'administratorss',  // 指向新的老师提供者
+=======
 
         ],
         'student' => [
@@ -57,6 +68,7 @@ return [
         'administrator' => [
             'driver' => 'jwt',  // 使用 JWT 驱动
             'provider' => 'administrators',  // 指向新的老师提供者
+>>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
             'hash' => false,
         ],
     ],
@@ -92,21 +104,35 @@ return [
             'model' => App\Models\Users::class, // 这应该是你的用户模型的类名
         ],
 
+<<<<<<< HEAD
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
+
+        'administratorss' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\administrators::class,
+=======
 
         'administratorss' => [
             'driver' => 'eloquent',
             'model' => App\Models\WdwAdminRegisterModel::class,
+>>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
         ],
 
         'studentss' => [
             'driver' => 'eloquent',
             'model' => App\Models\students::class,
         ],
+<<<<<<< HEAD
+=======
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+>>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
     ],
 
     /*

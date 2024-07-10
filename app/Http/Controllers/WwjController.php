@@ -2,6 +2,11 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
+class WwjController
+{
+
+=======
 use App\Models\science_star_registrations;
 use App\Models\students;
 use App\Mail\VerificationCode;
@@ -196,4 +201,5 @@ class WwjController extends Controller
 
 
 
+>>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
 }
