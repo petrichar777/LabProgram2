@@ -22,7 +22,7 @@ class ScienceStarExport implements FromCollection, WithHeadings
     public function headings(): array
     {
         return [
-            'Student ID',
+            'students ID',
             'Grade',
             'Major',
             'Class',

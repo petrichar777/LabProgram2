@@ -49,12 +49,12 @@ return [
             'provider' => 'users',
 
         ],
-        'student' => [
+        'students' => [
             'driver' => 'jwt',
-            'provider' => 'student',
+            'provider' => 'studentss',
             'hash' => false,
         ],
-        'administrator' => [
+        'administrators' => [
             'driver' => 'jwt',  // 使用 JWT 驱动
             'provider' => 'administrators',  // 指向新的老师提供者
             'hash' => false,
@@ -93,14 +93,14 @@ return [
         ],
 
 
-        'administratorss' => [
+        'administrators' => [
             'driver' => 'eloquent',
-            'model' => App\Models\WdwAdminRegisterModel::class,
+            'model' => App\Models\administrators::class,
         ],
 
         'studentss' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Student::class,
+            'model' => App\Models\students::class,
         ],
 
         // 'users' => [
