@@ -100,7 +100,7 @@ return [
 
         'studentss' => [
             'driver' => 'eloquent',
-            'model' => App\Models\Student::class,
+            'model' => App\Models\students::class,
         ],
 
         // 'users' => [

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class Sxqcontroller extends Controller
+class WkxController extends Controller
 {
     //
 }
