@@ -1,9 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Routing\Controller;
 use App\Models\science_star_registrations;
-use App\Models\Student;
+use App\Models\students;
 use App\Mail\VerificationCode;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -69,7 +69,7 @@ class WwjController extends Controller
             'email' => $request->email,
         ];
         //查询账号，进行判断
-        $count = Student::where('account', $request->account)->count();
+        $count = students::where('account', $request->account)->count();
 
         if ($count > 0) {
             return json_fail(['status' => 'fail', 'message' => '该用户信息已经被注册过了', 'code' => 101]);
@@ -77,7 +77,7 @@ class WwjController extends Controller
 
         try {
             //在数据库中插入相应信息
-            $student = Student::create($registeredInfo);
+            $student = students::create($registeredInfo);
             return json_success(['status' => 'success', 'message' => '注册成功!', 'data' => $student->id, 'code' => 200]);
         } catch (\Exception $e) {
             return json_fail(['status' => 'fail', 'message' => '注册失败: ' . $e->getMessage(), 'code' => 100]);
@@ -91,7 +91,7 @@ class WwjController extends Controller
         $new_password = $request->password;
 
         // 查找学生
-        $student = Student::where('account', $request->account);
+        $student = students::where('account', $request->account);
 
         if (!$student) {
             return json_fail(['status' => 'fail', 'message' => '该学生未注册', 'code' => 404]);
@@ -108,7 +108,7 @@ class WwjController extends Controller
 
         try {
             // 更新密码
-            Student::where('account', $request->account)->where('email', $request->email)->update(['password' => Hash::make($new_password)]);
+            students::where('account', $request->account)->where('email', $request->email)->update(['password' => Hash::make($new_password)]);
             return json_success(['status' => 'success', 'message' => '密码重置成功', 'code' => 200]);
         } catch (\Exception $e) {
             return json_fail(['status' => 'fail', 'message' => '密码重置失败: ' . $e->getMessage(), 'code' => 500]);
@@ -166,34 +166,3 @@ class WwjController extends Controller
             return response()->json(['message' => '查看报名信息时发生错误', 'error' => $e->getMessage()], 500);
         }
     }
-//    public function certificateContent(Request $request)
-//    {
-//        $id = $request['student_id'];
-//
-//        // 查询该学生的科研之星报名信息
-//        $scienceStarRegistration = science_star_registrations::where('student_id', $id)
-//            ->where('student_id',$id)
-//            ->firstOrFail();
-//
-//        if ($request->isMethod('post')) {
-//            $request->validate([
-//                'certificate' => 'required|string'
-//            ]);
-//
-//            $scienceStarRegistration->certificate = $request->input('certificate');
-//            science_star_registrations::where('student_id', $id)
-//                ->where('student_id', $id)
-//                ->update(['certificate' => $request->input('certificate')]);
-//            $updatedRegistration = science_star_registrations::where('student_id', $id)
-//                ->get([
-//                    'certificate'
-//                ]);
-//            return json_success(['message' => '内容已保存','data'=>$updatedRegistration], 200);
-//        }
-//
-//        return json_fail(['data' => $scienceStarRegistration], 200);
-//    }
-
-
-
-}
