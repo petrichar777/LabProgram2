@@ -24,6 +24,7 @@ use App\Http\Controllers\DmlController;
 */
 
 );
+//王大伟
 ////学生登录接口
 Route::post('/user/login',[WdwController::class,'WdwStudentLogin']);
 //学生删除竞赛之星报名接口
@@ -51,6 +52,7 @@ Route::middleware('jwt.role:students')->prefix('students')->group(function (){
 });
 // 管理查看科研之星申报信息
 Route::post('admin/scienceStar', [DmlController::class, 'getOne']);
+//刘
 Route::post('/user/addCompetitionStar',[App\Http\Controllers\LywController::class,'NewAdd']);
 Route::post('/admin/approveCompetitionStar',[App\Http\Controllers\LywController::class,'approval']);
 Route::post('/admin/competitionStar',[App\Http\Controllers\LywController::class,'getAllCompetitionStars']);
@@ -62,21 +64,16 @@ Route::post('/user/viewCompetitionStar',[App\Http\Controllers\LywController::cla
     Route::get('admin/export-competition-star', [WwjController::class, 'exportCompetitionStar']);
     Route::get('admin/export-innovation-star', [WwjController::class, 'exportInnovationStar']);
     Route::get('admin/export-science-star', [WwjController::class, 'exportScienceStar']);
-
-
-
+//汪珂旭
 Route::post('user/viewInnovationStar',[\App\Http\Controllers\WkxController::class,'chaxun']);//查询
-
 Route::post('user/editInnovationStar',[\App\Http\Controllers\WkxController::class,'xiugai']);//修改
-
 Route::post('user/deleteInnovationStar',[\App\Http\Controllers\WkxController::class,'shanchu']);//删除
-//mei
+//梅翰文
 Route::post('editScienceStar',[\App\Http\Controllers\MhwController::class,"editScienceStar"]);//科技之星学生信息修改
 Route::post('admin/login',[\App\Http\Controllers\MhwController::class,"adminlogin"]);//科技之星学生信息修改
 Route::post('user/editCompetitionStar',[\App\Http\Controllers\MhwController::class,"usereditCompetitionStar"]);
 Route::post('adminzhuce',[\App\Http\Controllers\MhwController::class,"zhuceadmin"]);
 Route::middleware('jwt.role:administrators')->prefix('administrators')->group(function () {
     Route::post('logout',[\App\Http\Controllers\MhwController::class,'adminlogout']);//登出用户
-
 });
 Route::post('user/addInnovationStar',[\App\Http\Controllers\MhwController::class,"useraddInnovationStar"]);
