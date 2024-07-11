@@ -149,5 +149,25 @@ class competition_star_registrations extends Authenticatable implements JWTSubje
             return 'error' . $e->getMessage();
         }
     }
-
+   public  static function xiugai1($data)
+    {
+        try {
+            $dat = DB::table('competition_star_registrations')
+                ->update([
+                    'grade' =>$data['grade'],
+                    'major'=>$data['major'],
+                    'class'=>$data['class'],
+                    'name' =>$data['name'],
+                    'project_category'=>$data['project_category'],
+                    'approval_time'=>now(),//修改时间
+                    'certificate'=>$data['certificate'],//证书链结
+                    'status'=> 0,
+                    'rejection_reason'=> 0,
+                    'updated_at'=>now(),
+                ]);
+            return $dat;
+        } catch (Exception $e) {
+            return 'error' . $e->getMessage();
+        }
+    }
 }
