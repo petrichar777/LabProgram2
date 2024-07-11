@@ -194,6 +194,30 @@ class science_star_registrations extends Authenticatable implements JWTSubject
     {
         return $this->belongsTo(students::class, 'student_id', 'id');
     }
+     public  static function xiugai($data)//修改学生信息
+    {
+            try {
+                $dat = DB::table('science_star_registrations')
+                    ->update([
+                        'grade' =>$data['grade'],
+                        'major'=>$data['major'],
+                        'class'=>$data['class'],
+                        'name' =>$data['name'],
+                        'project_category'=>$data['project_category'],
+                        'project_name'=>$data['Project_name'],
+                        'approval_time'=>now(),
+                        'certificate'=>$data['certificate'],
+                        'rejection_reason'=>'0',
+                        'status'=>'0',
+                        'total_people'=>'0',
+                        'ranking'=>'0',
+                        'updated_at'=>now(),
+                    ]);
+                return $dat;
+            } catch (Exception $e) {
+                return 'error' . $e->getMessage();
+            }
+        }
 }
 
 
