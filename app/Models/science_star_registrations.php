@@ -186,6 +186,14 @@ class science_star_registrations extends Authenticatable implements JWTSubject
             return 'error' . $e->getMessage();
         }
     }
+      /*关联表*/
+    protected $table = 'science_star_registrations';
+    public $timestamps = false;
+  
+    public function administrators()
+    {
+        return $this->belongsTo(students::class, 'student_id', 'id');
+    }
 }
 
 
