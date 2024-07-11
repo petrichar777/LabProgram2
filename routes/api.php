@@ -70,9 +70,9 @@ Route::post('user/viewInnovationStar',[\App\Http\Controllers\WkxController::clas
 Route::post('user/editInnovationStar',[\App\Http\Controllers\WkxController::class,'xiugai']);//修改
 
 Route::post('user/deleteInnovationStar',[\App\Http\Controllers\WkxController::class,'shanchu']);//删除
+//mei
 Route::post('editScienceStar',[\App\Http\Controllers\MhwController::class,"editScienceStar"]);//科技之星学生信息修改
 Route::post('admin/login',[\App\Http\Controllers\MhwController::class,"adminlogin"]);//科技之星学生信息修改
-//Route::post('admin/logout',[\App\Http\Controllers\MhwController::class,"adminlogout"]);
 Route::post('user/editCompetitionStar',[\App\Http\Controllers\MhwController::class,"usereditCompetitionStar"]);
 Route::post('adminzhuce',[\App\Http\Controllers\MhwController::class,"zhuceadmin"]);
 Route::middleware('jwt.role:administrators')->prefix('administrators')->group(function () {
