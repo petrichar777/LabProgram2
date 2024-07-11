@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\students;
-use App\Model\sciencestarregistrations;
+use App\Model\science_star_registrations;
 use Illuminate\Http\Request;
 
 class DmlController extends Controller
