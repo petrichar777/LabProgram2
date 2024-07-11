@@ -156,5 +156,20 @@ use Illuminate\Support\Facades\Hash;
     {
         return $this->hasOne(sciencestarregistrations::class, 'student_id', 'id');
     }
+
+     public static function charu($dam)//查找学生ID
+    {
+        try {
+            $dm = students::where('name', $dam['name'])
+                -> where('major',$dam['major'])
+                -> where('class',$dam['class'])
+                ->where('grade',$dam['grade'])
+               // 明确指定列名
+                ->first();
+            return $dm;
+        } catch (Exception $e) {
+            return 'error' . $e->getMessage();
+        }
+    }
 }
 
