@@ -12,6 +12,7 @@ class innovation_star_registrations extends Model
 
     protected $table = 'innovation_star_registrations';
 
+     // 定义可以批量赋值的字段
     protected $fillable = [
         'grade',
         'major',
@@ -186,3 +187,4 @@ class innovation_star_registrations extends Model
         }
     }
 }
+
