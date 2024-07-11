@@ -77,3 +77,7 @@ Route::middleware('jwt.role:administrators')->prefix('administrators')->group(fu
     Route::post('logout',[\App\Http\Controllers\MhwController::class,'adminlogout']);//登出用户
 });
 Route::post('user/addInnovationStar',[\App\Http\Controllers\MhwController::class,"useraddInnovationStar"]);
+//苏晓琦
+Route::post('admin/innovationStar', [SxqController::class, 'innovationStar']);
+Route::post('admin/approveInnovationStar', [SxqController::class, 'approveInnovationStar']);
+Route::post('user/addInnovationStar', [SxqController::class, 'addInnovationStar']);
