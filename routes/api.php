@@ -11,6 +11,8 @@ use App\Http\Controllers\WdwController;
 use App\Http\Controllers\WwjController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DmlController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -49,7 +51,8 @@ Route::post('/user/addCompetitionStar', [WdwController::class, 'apply_competitio
 Route::middleware('jwt.role:students')->prefix('students')->group(function (){
     Route::post('logout', [WdwController::class, 'logoutStudent']);//学生登出
 });
-
+// 管理查看科研之星申报信息
+Route::post('admin/scienceStar', [DmlController::class, 'getOne']);
 Route::post('/user/addCompetitionStar',[App\Http\Controllers\LywController::class,'NewAdd']);
 Route::post('/admin/approveCompetitionStar',[App\Http\Controllers\LywController::class,'approval']);
 Route::post('/admin/competitionStar',[App\Http\Controllers\LywController::class,'getAllCompetitionStars']);
