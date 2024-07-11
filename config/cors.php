@@ -16,11 +16,15 @@ return [
     */
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d6f3464 (first commit)
     'paths' => ['api/*', 'sanctum/csrf-cookie'],
 
     'allowed_methods' => ['*'],
 
     'allowed_origins' => ['*'],
+<<<<<<< HEAD
 =======
     'paths' => ['api/*'],
 
@@ -28,6 +32,8 @@ return [
 
     'allowed_origins' => ['http://localhost:8000'],
 >>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
+=======
+>>>>>>> d6f3464 (first commit)
 
     'allowed_origins_patterns' => [],
 

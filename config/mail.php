@@ -36,7 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
+<<<<<<< HEAD
             'host' => env('MAIL_HOST','smtp.qq.com'),
+=======
+            'host' => env('MAIL_HOST', 'smtp.qq.com'),
+>>>>>>> d6f3464 (first commit)
             'port' => env('MAIL_PORT', 465),
             'encryption' => env('MAIL_ENCRYPTION', 'ssl'),
             'username' => env('MAIL_USERNAME'),
@@ -92,8 +96,13 @@ return [
     */
 
     'from' => [
+<<<<<<< HEAD
         'address' => env('MAIL_FROM_ADDRESS', '1650934903@qq.com'),
         'name' => env('MAIL_FROM_NAME', '奖项报名系统'),
+=======
+        'address' => env('MAIL_FROM_ADDRESS', '870663325@qq.com'),
+        'name' => env('MAIL_FROM_NAME', 'xu'),
+>>>>>>> d6f3464 (first commit)
     ],
 
     /*

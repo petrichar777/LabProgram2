@@ -131,7 +131,11 @@ return [
     |
     */
 
+<<<<<<< HEAD
     'algo' => env('JWT_ALGO', Tymon\JWTAuth\Providers\JWT\Provider::ALGO_HS256),
+=======
+
+>>>>>>> d6f3464 (first commit)
 
     /*
     |--------------------------------------------------------------------------

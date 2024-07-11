@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< HEAD
 
 use App\Http\Controllers\YyhController;
 use Illuminate\Http\Request;
@@ -11,6 +12,12 @@ use App\Http\Controllers\WdwController;
 use App\Http\Controllers\WwjController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+=======
+use App\Http\Controllers\YyhController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VerificationController;
+>>>>>>> d6f3464 (first commit)
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,6 +28,7 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+<<<<<<< HEAD
 );
 ////学生登录接口
 Route::post('/user/login',[WdwController::class,'WdwStudentLogin']);
@@ -61,3 +69,14 @@ Route::post('/user/viewCompetitionStar',[App\Http\Controllers\LywController::cla
     Route::get('admin/export-innovation-star', [WwjController::class, 'exportInnovationStar']);
     Route::get('admin/export-science-star', [WwjController::class, 'exportScienceStar']);
 
+=======
+
+
+Route::post('user/viewInnovationStar',[\App\Http\Controllers\WkxController::class,'chaxun']);//查询
+
+Route::post('user/editInnovationStar',[\App\Http\Controllers\WkxController::class,'xiugai']);//修改
+
+Route::post('user/deleteInnovationStar',[\App\Http\Controllers\WkxController::class,'shanchu']);//删除
+
+Route::post('send-code',[VerificationController::class,'sendVerificationCode']);//发送邮件
+>>>>>>> d6f3464 (first commit)
