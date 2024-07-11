@@ -2,22 +2,67 @@
 
 namespace App\Models;
 
-<<<<<<< HEAD
+
 use Illuminate\Foundation\Auth\User as Authenticatable;//引用Authenticatable类使得DemoModel具有用户认证功能
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Facades\DB;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Exception;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Hash;
+
 
  class students extends Authenticatable implements JWTSubject
-{//
+{
+     // 定义可以批量赋值的字段
+    protected $fillable = [
+        'account',
+        'password',
+        'grade',
+        'major',
+        'class',
+        'name',
+        'email'
+    ];
     protected $table = "students";
     public $timestamps = true;
     protected $primaryKey = "id";
     protected $guarded = [];
 
+    // 隐藏密码字段
+    protected $hidden = [
+        'password',
+    ];
     //不知道有什么用
     use HasFactory;
+    // 修改器：在设置密码时自动进行哈希加密
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
+
+    // 验证凭证的静态方法
+    public static function validateCredentials($account, $password)
+    {
+        try {
+            // 查找用户
+            $user = self::where('account', $account)->first();
+
+            // 检查用户是否存在以及密码是否正确
+            if ($user && Hash::check($password, $user->password)) {
+                // 如果密码正确，返回 true
+                return true;
+            }
+
+            // 如果用户不存在或密码不正确，返回 false
+            return false;
+
+        } catch (Exception $e) {
+            // 处理异常，记录日志或返回错误信息
+            // Log::error('Error validating credentials: ' . $e->getMessage());
+            return false;
+        }
+    }
     public function getJWTIdentifier()
     {
         //getKey() 方法用于获取模型的主键值
@@ -81,37 +126,6 @@ use Exception;
      }
 
 
-//     public static function WdwUserCheckNumber($account){
-//         try {
-//             $count = students::select('account')
-//                 ->where('account', $account)
-//                 ->count();
-//             return $count;
-//         } catch (Exception $e) {
-//             return 'error' . $e->getMessage();
-//         }
-//     }
-
-//     public static function WdwcreateUser($user)
-//     {
-//         try {
-//             $data = students::insert([
-//                 'account' => $user['account'],
-//                 'password' =>  bcrypt($user['password']),
-//                 'grade' => $user['grade'],
-//                 'major' => $user['major'],
-//                 'class' => $user['class'],
-//                 'name' => $user['name'],
-//                 'email'=>$user['email'],
-//                 'created_at' => now(),
-//                 'updated_at' => now(),
-//             ]);
-//             return $data;
-//
-//         } catch (Exception $e) {
-//             return 'error'.$e->getMessage();
-//         }
-//     }
 
      // 根据姓名、专业、年级进行模糊查询
     public static function searchStudents($filters)
@@ -137,62 +151,3 @@ use Exception;
     }
 }
 
-=======
-use Exception;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Hash;
-
-class students extends Model
-{
-    use HasFactory;
-
-    // 定义表名
-    protected $table = 'students';
-
-    // 定义可以批量赋值的字段
-    protected $fillable = [
-        'account',
-        'password',
-        'grade',
-        'major',
-        'class',
-        'name',
-        'email'
-    ];
-
-    // 隐藏密码字段
-    protected $hidden = [
-        'password',
-    ];
-
-    // 修改器：在设置密码时自动进行哈希加密
-    public function setPasswordAttribute($password)
-    {
-        $this->attributes['password'] = bcrypt($password);
-    }
-
-    // 验证凭证的静态方法
-    public static function validateCredentials($account, $password)
-    {
-        try {
-            // 查找用户
-            $user = self::where('account', $account)->first();
-
-            // 检查用户是否存在以及密码是否正确
-            if ($user && Hash::check($password, $user->password)) {
-                // 如果密码正确，返回 true
-                return true;
-            }
-
-            // 如果用户不存在或密码不正确，返回 false
-            return false;
-
-        } catch (Exception $e) {
-            // 处理异常，记录日志或返回错误信息
-            // Log::error('Error validating credentials: ' . $e->getMessage());
-            return false;
-        }
-    }
-}
->>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
