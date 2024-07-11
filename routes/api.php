@@ -36,8 +36,6 @@ Route::post('/user/search', [WdwController::class, 'search']);
 Route::post('/admin/search_competitionStar', [WdwController::class, 'competition_star_registrations_search']);
 //管理员查询双创之星接口
 Route::post('/admin/search_innovationStar', [WdwController::class, 'innovation_star_registrations_search']);
-//管理员查询双创之星接口
-Route::post('/admin/search_scienceStar', [WdwController::class, 'science_star_registrations_search']);
 //学生新增科研之星申报信息接口
 Route::post('/user/addScienceStar', [WdwController::class, 'apply_science_star']);
 //学生审批科研之星申报信息接口
