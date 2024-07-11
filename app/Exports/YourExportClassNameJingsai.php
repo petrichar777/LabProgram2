@@ -3,10 +3,14 @@
 namespace App\Exports;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 use App\Http\Model\Competition;
 =======
 use App\Models\Competition;
 >>>>>>> f96da5e945cc34c0ee9f5ea316ca832f5d45270a
+=======
+use App\Models\Competition;
+>>>>>>> d6f3464 (first commit)
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 

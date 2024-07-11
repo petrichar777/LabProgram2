@@ -47,6 +47,7 @@ return [
         'user' => [
             'driver' => 'jwt',
             'provider' => 'users',
+<<<<<<< HEAD
 
         ],
         'students' => [
@@ -58,6 +59,8 @@ return [
             'driver' => 'jwt',  // 使用 JWT 驱动
             'provider' => 'administrators',  // 指向新的老师提供者
             'hash' => false,
+=======
+>>>>>>> d6f3464 (first commit)
         ],
     ],
 
@@ -92,6 +95,7 @@ return [
             'model' => App\Models\Users::class, // 这应该是你的用户模型的类名
         ],
 
+<<<<<<< HEAD
 
         'administrators' => [
             'driver' => 'eloquent',
@@ -103,6 +107,8 @@ return [
             'model' => App\Models\students::class,
         ],
 
+=======
+>>>>>>> d6f3464 (first commit)
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

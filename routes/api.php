@@ -1,16 +1,15 @@
 <?php
 
 
-use App\Http\Controllers\YyhController;
+
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LywController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WdwController;
 use App\Http\Controllers\WwjController;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VerificationController;
 use App\Http\Controllers\DmlController;
 
 /*
@@ -23,6 +22,7 @@ use App\Http\Controllers\DmlController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
 );
 ////学生登录接口
 Route::post('/user/login',[WdwController::class,'WdwStudentLogin']);
@@ -57,10 +57,19 @@ Route::post('/user/addCompetitionStar',[App\Http\Controllers\LywController::clas
 Route::post('/admin/approveCompetitionStar',[App\Http\Controllers\LywController::class,'approval']);
 Route::post('/admin/competitionStar',[App\Http\Controllers\LywController::class,'getAllCompetitionStars']);
 Route::post('/user/viewCompetitionStar',[App\Http\Controllers\LywController::class,'competitionStar']);
+//王文杰接口
     Route::post('user/register', [WwjController::class, 'Wwjregister']);
     Route::post('user/sendVerificationCode', [WwjController::class, 'sendVerificationCode'])->name('send.verification.code');
     Route::post('user/forgotPassword', [WwjController::class, 'forgotPassword']);
     Route::get('admin/export-competition-star', [WwjController::class, 'exportCompetitionStar']);
     Route::get('admin/export-innovation-star', [WwjController::class, 'exportInnovationStar']);
     Route::get('admin/export-science-star', [WwjController::class, 'exportScienceStar']);
+
+
+
+Route::post('user/viewInnovationStar',[\App\Http\Controllers\WkxController::class,'chaxun']);//查询
+
+Route::post('user/editInnovationStar',[\App\Http\Controllers\WkxController::class,'xiugai']);//修改
+
+Route::post('user/deleteInnovationStar',[\App\Http\Controllers\WkxController::class,'shanchu']);//删除
 

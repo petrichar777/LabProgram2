@@ -1,9 +1,13 @@
 <?php
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 
 >>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
+=======
+
+>>>>>>> d6f3464 (first commit)
 namespace App\Mail;
 
 use Illuminate\Bus\Queueable;
@@ -25,6 +29,7 @@ class VerificationMail extends Mailable
     public function build()
     {
 <<<<<<< HEAD
+<<<<<<< HEAD
         return $this->view('verification')
             ->with([
                 'verificationCode' => $this->code,
@@ -32,5 +37,11 @@ class VerificationMail extends Mailable
 =======
         return $this->view('emails.verification');
 >>>>>>> 0015bfb2bb49bf44b98d4527abea4ffd161c1eaf
+=======
+        return $this->view('emails.verification')
+            ->with([
+                'code'=>$this->code,
+            ]);
+>>>>>>> d6f3464 (first commit)
     }
 }
